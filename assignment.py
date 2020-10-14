@@ -9,8 +9,26 @@ def title():
     # output parameters: None
     # Author:
     # Modified:
-    
-    return None
+
+
+def RectangularPrism(prism):
+    length = prism[0]
+    height = prism[1]
+    width = prism[2]
+    V = length*height*width
+
+def Sphere():
+    import math
+    radius = 
+    V = (4/3)*math.pi*(r**3)
+    return V
+
+def TriangularPrism(prism):
+    length = prism[0]
+    height = prism[1]
+    base = prism[2]
+    V = (1/2)*length*height*
+    return V
 
 def instructions():
     # Will display instructions
