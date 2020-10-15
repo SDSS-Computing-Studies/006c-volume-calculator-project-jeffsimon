@@ -28,23 +28,27 @@ def RectangularPrism(measurement):
     width = measurement[2]
     V= length*height*width
     return V
+
 def HexagonalPyramid(measurement):
     baseedge=measurement[0]
     height=measurement[1]
     V=math.sqrt(3)/2*math.pow(baseedge,2)*height
     return V
+
 def RectangularPyramid(measurement):
     BaseLength = measurement[0]
     BaseWidth = measurement[1]
     Height = measurement[2]
     V = (1/3)*BaseLength*BaseWidth*Height
     return V
+
 def TriangularPrism(measurement):
     length = measurement[0]
     height = measurement[1]
     base = measurement[2]
     V= (1/2)*base*length*height
     return V
+
 def TriangularPyramid(measurement):
     BaseLength = measurement[0]
     BaseHeight = measurement[1]
