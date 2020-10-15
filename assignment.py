@@ -54,7 +54,31 @@ def TriangularPyramid(measurement):
     BaseHeight = measurement[1]
     Height = measurement[2]
     V = (1/3)*BaseLength*BaseHeight*Height
+def Cone(measurements)
+    height = measurements[0]
+    radius = measurements[1]
+    p = math.pi
+    volume = (height/3) * math.pi * radius * radius * height
+    return volume
 
+def cylinder(measurement)
+    height = measurements[0]
+    radian = measurements[1]
+    volume = math.pi* radian * radian * height 
+    return volume
+
+def hexagonalprism(measurement)
+    BaseEdge = a
+    a = measurement[0]
+    height = measurement[1]
+    volume = 3 * math.sqrt(3) * a * a * h/2
+    return volume 
+
+def pentagonprism(measurement)
+    BaseEdge = measurement[0]
+    height = measurement[1]
+    volume = (5 * BaseEdge * height) /2
+    return volume
 def instructions():
     # Will display instructions
     # input parameters: none needed
@@ -100,6 +124,26 @@ def getParams(shape):
         z=("Enter the height")
         prompts=[x,y,z,1] 
         return prompts 
+    elif shape ==8:
+        x=("enter the length")
+        y=("enter the radius")
+        prompts=[x,y,3] 
+        return prompts
+     elif shape ==9:
+        x=("enter the length")
+        y=("enter the radian")
+        prompts=[x,y,3]
+        return prompts
+     elif shape ==10:
+        x=("enter the base edge")
+        y=("enter the height")
+        prompts=[x,y,3]
+        return prompts
+     elif shape ==11:
+        x=("enter the base edge")
+        y=("enter the height")
+        prompts=[x,y,3]
+        return prompts
 
 def getInputs(questions):
     # Will prompt the user for inputs for the shape they.
@@ -170,4 +214,21 @@ def main():
             answer = TriangularPyramid(c)
             print(answer)
             run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
+        elif a==8:
+            answer =Cone(c)
+            print(answer)
+            run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
+        elif a==9:
+                answer=cylinder(c)
+                print(answer)
+                run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
+        elif a==10:
+                answer=hexagonalprism(c)
+                print(answer)
+                run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
+        elif a==11:
+                answer=pentagonprism(c)
+                print(answer)
+                run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
+main()
 main()
