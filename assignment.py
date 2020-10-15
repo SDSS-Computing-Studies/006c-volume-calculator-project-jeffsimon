@@ -7,27 +7,23 @@ def title():
     # Will display a title screen
     # input parameters: none needed
     # output parameters: None
-    # Author:
+    # Author:Harnoor
     # Modified:
+    print("Welcome to our program")
+    
 
-
-def RectangularPrism(prism):
-    length = prism[0]
-    height = prism[1]
-    width = prism[2]
-    V = length*height*width
-
-def Sphere():
-    import math
-    radius = 
-    V = (4/3)*math.pi*(r**3)
+def RectangularPrism(measurement):
+    length = measurement[0]
+    height = measurement[1]
+    width = measurement[2]
+    V= length*height*width
     return V
 
-def TriangularPrism(prism):
-    length = prism[0]
-    height = prism[1]
-    base = prism[2]
-    V = (1/2)*length*height*
+def TriangularPrism(measurement):
+    length = measurement[0]
+    height = measurement[1]
+    base = measurement[2]
+    V= (1/2)*base*length*height
     return V
 
 def instructions():
@@ -36,6 +32,8 @@ def instructions():
     # output parameters: None
     # Author:
     # Modified:
+    print("1=Rectangular Prism")
+    print("2=Triangular Prism")
     return None
 
 def getParams(shape):
@@ -44,9 +42,18 @@ def getParams(shape):
     # input parameter: string 
     # output parameter: return a list containing the prompts for each shape:
     # example: ["Enter the radius:","Enter the slant height:","Enter the height:"]
-    prompts
-
-    return prompts
+    if shape==1:
+        x=("Enter the length")
+        y=("Enter the height")
+        z=("Enter the width")
+        prompts=[x,y,z]
+        return prompts
+    elif shape==2:
+        x=("Enter the length")
+        y=("Enter the height")
+        z=("Enter the base")
+        prompts=[x,y,z]
+        return prompts
 
 def getInputs(questions):
     # Will prompt the user for inputs for the shape they.
@@ -54,8 +61,14 @@ def getInputs(questions):
     # It will turn all the input data into a list
     # input parameter: list containing the prompts/questions
     # output parameter: return a list containing all the measurements of the shape
-    measurements
-    
+    measurements=[]
+    a=int(input(questions[0]))
+    a=measurements.insert(0,a)
+    b=int(input(questions[1]))
+    b=measurements.insert(1,b)
+    c=int(input(questions[-1]))
+    c=measurements.insert(2,c)
+    print(measurements)
     return measurements
 
 def main():
@@ -63,5 +76,17 @@ def main():
     # You will need to include a while loop to keep repeating the commands until
     # the user chooses to exit
     title()
-
-main()
+    run=(1)
+    while run!=2:
+        instructions()
+        a=int(input("Select which shape you wish to calculate"))
+        b=getParams(a)
+        c=getInputs(b)
+        if a==1:
+            answer=RectangularPrism(c)
+            print(answer)
+            run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
+        elif a==2:
+            answer=TriangularPrism(c)
+            print(answer)
+            run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
