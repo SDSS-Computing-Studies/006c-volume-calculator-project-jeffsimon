@@ -28,6 +28,11 @@ def RectangularPrism(measurement):
     width = measurement[2]
     V= length*height*width
     return V
+def HexagonalPyramid(measurement):
+    baseedge=measurement[0]
+    height=measurement[1]
+    V=math.sqrt(3)/2*math.pow(baseedge,2)*height
+    return V
 
 def TriangularPrism(measurement):
     length = measurement[0]
@@ -70,11 +75,11 @@ def getParams(shape):
         x=("Enter the Radius")
         prompts=[x,2]
         return prompts
-    elif shape==4:
+    elif shape==4 or 5:
         x=("Enter the Base edge")
         y=("Enter the height")
         prompts=[x,y,3]
-        return prompts 
+        return prompts
 
 def getInputs(questions):
     # Will prompt the user for inputs for the shape they.
@@ -133,6 +138,9 @@ def main():
             answer=PentagonalPyramid(c)
             print(answer)
             run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
-        
+        elif a==5:
+            answer=HexagonalPyramid(c)
+            print(answer)
+            run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
 
 main()
