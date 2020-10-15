@@ -65,6 +65,11 @@ def getParams(shape):
         x=("Enter the Radius")
         prompts=[x,2]
         return prompts
+    elif shape==4:
+        x=("Enter the Base edge")
+        y=("Enter the height")
+        prompts=[x,y,3]
+        return prompts 
 
 def getInputs(questions):
     # Will prompt the user for inputs for the shape they.
