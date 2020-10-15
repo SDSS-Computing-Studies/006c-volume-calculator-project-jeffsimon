@@ -93,7 +93,12 @@ def getInputs(questions):
         a=int(input(questions[0]))
         a=measurements.insert(0,a)
         return measurements
-    
+    elif questions[-1]==3:
+        a=int(input(questions[0]))
+        a=measurements.insert(0,a)
+        b=int(input(questions[1]))
+        b=measurements.insert(1,b)
+        return measurements
     
 def main():
     # main block of code that will run your program and control program flow
