@@ -16,6 +16,11 @@ def Sphere(measurement):
     V=(4/3)*math.pi*math.pow(radius,3)
     return V
     
+def PentagonalPyramid(measurement):
+    baseedge=measurement[0]
+    height=measurement[1]
+    V=(5/12)*math.tan(0.942478)*height*math.pow(baseedge,2)
+    return V
 
 def RectangularPrism(measurement):
     length = measurement[0]
@@ -124,6 +129,10 @@ def main():
             print(answer)
             run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
     
+        elif a==4:
+            answer=PentagonalPyramid(c)
+            print(answer)
+            run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
         
 
 main()
