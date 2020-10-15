@@ -33,13 +33,23 @@ def HexagonalPyramid(measurement):
     height=measurement[1]
     V=math.sqrt(3)/2*math.pow(baseedge,2)*height
     return V
-
+def RectangularPyramid(measurement):
+    BaseLength = measurement[0]
+    BaseWidth = measurement[1]
+    Height = measurement[2]
+    V = (1/3)*BaseLength*BaseWidth*Height
+    return V
 def TriangularPrism(measurement):
     length = measurement[0]
     height = measurement[1]
     base = measurement[2]
     V= (1/2)*base*length*height
     return V
+def TriangularPyramid(measurement):
+    BaseLength = measurement[0]
+    BaseHeight = measurement[1]
+    Height = measurement[2]
+    V = (1/3)*BaseLength*BaseHeight*Height
 
 def instructions():
     # Will display instructions
@@ -80,6 +90,12 @@ def getParams(shape):
         y=("Enter the height")
         prompts=[x,y,3]
         return prompts
+    elif shape==6:
+        x=("Enter the Base edge")
+        y=("Enter the Base height")
+        z=("Enter the height")
+        prompts=[x,y,z,1] 
+        return prompts 
 
 def getInputs(questions):
     # Will prompt the user for inputs for the shape they.
@@ -142,5 +158,9 @@ def main():
             answer=HexagonalPyramid(c)
             print(answer)
             run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
-
+        elif a==6:
+            answer = ReactangularPyramid(c)
+            print(answer)
+            run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
+            
 main()
