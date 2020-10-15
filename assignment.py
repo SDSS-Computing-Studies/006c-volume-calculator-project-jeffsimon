@@ -40,7 +40,7 @@ def instructions():
     print("1=Rectangular Prism")
     print("2=Triangular Prism")
     print("3=Sphere")
-    print("4=cyliner")
+    print("4=cylinder")
     return None
 
 def getParams(shape):
