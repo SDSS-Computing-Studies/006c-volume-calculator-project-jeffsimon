@@ -90,7 +90,7 @@ def getParams(shape):
         y=("Enter the height")
         prompts=[x,y,3]
         return prompts
-    elif shape==6:
+    elif shape==6 or 7:
         x=("Enter the Base edge")
         y=("Enter the Base height")
         z=("Enter the height")
@@ -159,8 +159,11 @@ def main():
             print(answer)
             run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
         elif a==6:
-            answer = ReactangularPyramid(c)
+            answer = RectangularPyramid(c)
+            print(answer)
+            run=int(input("If u wish to exit the program, enter 2. If not enter 1")) 
+        elif a==7:
+            answer = TriangularPyramid(c)
             print(answer)
             run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
-            
 main()
