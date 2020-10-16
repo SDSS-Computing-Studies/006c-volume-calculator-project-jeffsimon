@@ -9,9 +9,10 @@ def title():
     # output parameters: None
     # Author:Harnoor
     # Modified:
-    print("Hello There!",end="")
-    print("Welcome to our program")
-
+    print("======================================================")
+    print("Hello There!",end=" ")
+    print("Welcome to our Volume Calculator Program!")
+    print("======================================================")
 def Sphere(measurement):
     radius=measurement[0]
     V=(4/3)*math.pi*math.pow(radius,3)
@@ -87,17 +88,18 @@ def instructions():
     # output parameters: None
     # Author:Harnoor
     # Modified:
-    print("1=Rectangular Prism")
-    print("2=Triangular Prism")
-    print("3=Sphere")
-    print("4=Pentagonal Pyramid")
-    print("5=Hexagonal Pyramid")
+    print("To start enter a number")
+    print("1=Triangular Prism")
+    print("2=Rectangular Prism")
+    print("3=Pentagonal Prism")
+    print("4=Hexagonal Prism")
+    print("5=Triangular Pyramid")
     print("6=Rectangular Pyramid")
-    print("7=Triangular Pyramid")
-    print("8=Cone")
-    print("9=Cylinder")
-    print("10=Hexagonal Prism")
-    print("11=Pentagonal Prism")
+    print("7=Pentagonal Pyramid")
+    print("8=Hexagonal Pyramid")
+    print("9=Cone")
+    print("10=Cylinder")
+    print("11=Sphere")
     return None
 
 def getParams(shape):
@@ -107,62 +109,75 @@ def getParams(shape):
     # output parameter: return a list containing the prompts for each shape:
     # example: ["Enter the radius:","Enter the slant height:","Enter the height:"]
     if shape==1:
-        x=("Enter the length")
-        y=("Enter the height")
-        z=("Enter the width")
+        #TriPrism
+        x=("Enter the Base Length")
+        y=("Enter the Height")
+        z=("Enter the Base Height")
         prompts=[x,y,z,1]
-        return prompts
+        return prompts    
     elif shape==2:
-        x=("Enter the base length")
-        y=("Enter the height")
-        z=("Enter the base height")
+        #RecPrism
+        x=("Enter the Length")
+        y=("Enter the Height")
+        z=("Enter the Width")
         prompts=[x,y,z,1]
         return prompts
     elif shape ==3:
-        x=("Enter the Radius")
-        prompts=[x,2]
+        #PentPrism
+        x=("enter the Base Edge")
+        y=("enter the Height")
+        prompts=[x,y,3]
         return prompts
     elif shape==4:
-        x=("Enter the Base edge")
-        y=("Enter the height")
+        #HexPyramid
+        x=("enter the Base Edge")
+        y=("enter the Height")
         prompts=[x,y,3]
         return prompts
     elif shape==5:
-        x=("Enter the Base edge")
-        y=("Enter the height")
-        prompts=[x,y,3]
-        return prompts
+        #TriPyramid
+        x=("Enter the Base Edge")
+        y=("Enter the Base height")
+        z=("Enter the Height")
+        prompts=[x,y,z,1] 
+        return prompts 
     elif shape==6:
-        x=("Enter the Base length")
-        y=("Enter the Base width")
-        z=("Enter the height")
+        #RecPyramid
+        x=("Enter the Base Length")
+        y=("Enter the Base Width")
+        z=("Enter the Height")
         prompts=[x,y,z,1] 
         return prompts
     elif shape==7:
-        x=("Enter the Base edge")
-        y=("Enter the Base height")
-        z=("Enter the height")
-        prompts=[x,y,z,1] 
-        return prompts 
+        #PentPyramid
+        x=("Enter the Base Edge")
+        y=("Enter the Height")
+        prompts=[x,y,3]
+        return prompts
+         
     elif shape ==8:
-        x=("enter the height")
-        y=("enter the radius")
-        prompts=[x,y,3] 
+        #HexPyramid
+        x=("Enter the Base Edge")
+        y=("Enter the Height")
+        prompts=[x,y,3]
         return prompts
     elif shape ==9:
-        x=("enter the height")
-        y=("enter the radius")
+        #Cone
+        x=("enter the Height")
+        y=("enter the Radius")
         prompts=[x,y,3]
         return prompts
     elif shape ==10:
-        x=("enter the base edge")
-        y=("enter the height")
+        #Cylinder
+        x=("enter the Height")
+        y=("enter the Radius")
         prompts=[x,y,3]
         return prompts
+        
     elif shape ==11:
-        x=("enter the base edge")
-        y=("enter the height")
-        prompts=[x,y,3]
+        #Sphere
+        x=("Enter the Radius")
+        prompts=[x,2]
         return prompts
 
 def getInputs(questions):
@@ -200,54 +215,97 @@ def main():
     # the user chooses to exit
     title()
     run=(1)
-    while run!=2:
+    while run!=2 and run==1:
         instructions()
         a=int(input("Select which shape you wish to calculate"))
         b=getParams(a)
         c=getInputs(b)
         if a==1:
-            answer=RectangularPrism(c)
-            print(answer)
-            run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
-        elif a==2:
             answer=TriangularPrism(c)
             print(answer)
-            run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
-        elif a==3:
-            answer=Sphere(c)
-            print(answer)
-            run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
-    
-        elif a==4:
-            answer=PentagonalPyramid(c)
-            print(answer)
-            run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
-        elif a==5:
-            answer=HexagonalPyramid(c)
+            run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+            while run>2 or run<=0:
+                print("Invalid Command. Please try again") 
+                run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+        elif a==2:
+            answer=RectangularPrism(c)
             print(answer)
             run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+            while run>2 or run<=0:
+                print("Invalid Command. Please try again") 
+                run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+        elif a==3:
+            answer=pentagonprism(c)
+            print(answer)
+            run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+            while run>2 or run<=0:
+                print("Invalid Command. Please try again")  
+                run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+    
+        elif a==4:
+            answer=hexagonalprism(c)
+            print(answer)
+            run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+            while run>2 or run<=0:
+                print("Invalid Command. Please try again")  
+                run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+        elif a==5:
+            answer=TriangularPyramid(c)
+            print(answer)
+            run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+            while run>2 or run<=0:
+                print("Invalid Command. Please try again") 
+                run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
         elif a==6:
             answer = RectangularPyramid(c)
             print(answer)
-            run=int(input("If u wish to exit the program, enter 2. If not enter 1")) 
+            run=int(input("If you wish to exit the program, enter 2. If not enter 1")) 
+            while run>2 or run<=0:
+                print("Invalid Command. Please try again")  
+                run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+        
         elif a==7:
-            answer = TriangularPyramid(c)
+            answer = PentagonalPyramid(c)
             print(answer)
-            run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
+            run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+            while run>2 or run<=0:
+                print("Invalid Command. Please try again")  
+                run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
         elif a==8:
-            answer =Cone(c)
+            answer =HexagonalPyramid(c)
             print(answer)
-            run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
+            run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+            while run>2 or run<=0:
+                print("Invalid Command. Please try again")  
+                run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
         elif a==9:
-                answer=cylinder(c)
-                print(answer)
-                run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
+            answer=Cone(c)
+            print(answer)
+            run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+            while run>2 or run<=0:
+                print("Invalid Command. Please try again")  
+                run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
         elif a==10:
-                answer=hexagonalprism(c)
-                print(answer)
-                run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
+            answer=cylinder(c)
+            print(answer)
+            run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+            while run>2 or run<=0:
+                print("Invalid Command. Please try again") 
+                run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
         elif a==11:
-                answer=pentagonprism(c)
-                print(answer)
-                run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
+            answer=Sphere(c)
+            print(answer)
+            run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+            while run>2 or run<=0:
+                print("Invalid Command. Please try again")  
+                run=int(input("If you wish to exit the program, enter 2. If not enter 1"))
+        
+    
+        if run==(2):
+            print("Thank you for using our Volume Calculator")
+
+         
+    
+
 main()
+        
