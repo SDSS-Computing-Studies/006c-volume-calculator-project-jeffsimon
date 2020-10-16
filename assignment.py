@@ -9,6 +9,7 @@ def title():
     # output parameters: None
     # Author:Harnoor
     # Modified:
+    print("Hello There!",end="")
     print("Welcome to our program")
 
 def Sphere(measurement):
@@ -53,42 +54,50 @@ def TriangularPyramid(measurement):
     BaseLength = measurement[0]
     BaseHeight = measurement[1]
     Height = measurement[2]
-    V = (1/3)*BaseLength*BaseHeight*Height
-def Cone(measurements)
+    V = (1/3)*BaseLength*BaseHeight*Height*(1/2)
+    return V
+
+def Cone(measurements):
     height = measurements[0]
     radius = measurements[1]
-    p = math.pi
-    volume = (height/3) * math.pi * radius * radius * height
+    volume = (height/3) * math.pi * math.pow(radius,2)
     return volume
 
-def cylinder(measurement)
-    height = measurements[0]
-    radian = measurements[1]
+def cylinder(measurement):
+    height = measurement[0]
+    radian = measurement[1]
     volume = math.pi* radian * radian * height 
     return volume
 
-def hexagonalprism(measurement)
-    BaseEdge = a
+def hexagonalprism(measurement):
+    
     a = measurement[0]
     height = measurement[1]
-    volume = 3 * math.sqrt(3) * a * a * h/2
+    volume = 3*math.sqrt(3)*math.pow(a,2)* height/2
     return volume 
 
-def pentagonprism(measurement)
+def pentagonprism(measurement):
     BaseEdge = measurement[0]
     height = measurement[1]
-    volume = (5 * BaseEdge * height) /2
+    volume = (1/4)*math.sqrt(5*(5+2*math.sqrt(5)))*math.pow(BaseEdge,2)*height
     return volume
 def instructions():
     # Will display instructions
     # input parameters: none needed
     # output parameters: None
-    # Author:
+    # Author:Harnoor
     # Modified:
     print("1=Rectangular Prism")
     print("2=Triangular Prism")
     print("3=Sphere")
-    print("4=cylinder")
+    print("4=Pentagonal Pyramid")
+    print("5=Hexagonal Pyramid")
+    print("6=Rectangular Pyramid")
+    print("7=Triangular Pyramid")
+    print("8=Cone")
+    print("9=Cylinder")
+    print("10=Hexagonal Prism")
+    print("11=Pentagonal Prism")
     return None
 
 def getParams(shape):
@@ -104,42 +113,53 @@ def getParams(shape):
         prompts=[x,y,z,1]
         return prompts
     elif shape==2:
-        x=("Enter the length")
+        x=("Enter the base length")
         y=("Enter the height")
-        z=("Enter the base")
+        z=("Enter the base height")
         prompts=[x,y,z,1]
         return prompts
     elif shape ==3:
         x=("Enter the Radius")
         prompts=[x,2]
         return prompts
-    elif shape==4 or 5:
+    elif shape==4:
         x=("Enter the Base edge")
         y=("Enter the height")
         prompts=[x,y,3]
         return prompts
-    elif shape==6 or 7:
+    elif shape==5:
+        x=("Enter the Base edge")
+        y=("Enter the height")
+        prompts=[x,y,3]
+        return prompts
+    elif shape==6:
+        x=("Enter the Base length")
+        y=("Enter the Base width")
+        z=("Enter the height")
+        prompts=[x,y,z,1] 
+        return prompts
+    elif shape==7:
         x=("Enter the Base edge")
         y=("Enter the Base height")
         z=("Enter the height")
         prompts=[x,y,z,1] 
         return prompts 
     elif shape ==8:
-        x=("enter the length")
+        x=("enter the height")
         y=("enter the radius")
         prompts=[x,y,3] 
         return prompts
-     elif shape ==9:
-        x=("enter the length")
-        y=("enter the radian")
+    elif shape ==9:
+        x=("enter the height")
+        y=("enter the radius")
         prompts=[x,y,3]
         return prompts
-     elif shape ==10:
+    elif shape ==10:
         x=("enter the base edge")
         y=("enter the height")
         prompts=[x,y,3]
         return prompts
-     elif shape ==11:
+    elif shape ==11:
         x=("enter the base edge")
         y=("enter the height")
         prompts=[x,y,3]
@@ -230,5 +250,4 @@ def main():
                 answer=pentagonprism(c)
                 print(answer)
                 run=int(input("If u wish to exit the program, enter 2. If not enter 1"))
-main()
 main()
