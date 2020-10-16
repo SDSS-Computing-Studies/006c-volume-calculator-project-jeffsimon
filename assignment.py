@@ -14,17 +14,20 @@ def title():
     print("Welcome to our Volume Calculator Program!")
     print("======================================================")
 def Sphere(measurement):
+    # Author:Jeff
     radius=measurement[0]
     V=(4/3)*math.pi*math.pow(radius,3)
     return V
     
 def PentagonalPyramid(measurement):
+    # Author:Harnoor
     baseedge=measurement[0]
     height=measurement[1]
     V=(5/12)*math.tan(0.942478)*height*math.pow(baseedge,2)
     return V
 
 def RectangularPrism(measurement):
+    # Author:Jeff
     length = measurement[0]
     height = measurement[1]
     width = measurement[2]
@@ -32,12 +35,14 @@ def RectangularPrism(measurement):
     return V
 
 def HexagonalPyramid(measurement):
+    # Author:Harnoor
     baseedge=measurement[0]
     height=measurement[1]
     V=math.sqrt(3)/2*math.pow(baseedge,2)*height
     return V
 
 def RectangularPyramid(measurement):
+    # Author:Jeff
     BaseLength = measurement[0]
     BaseWidth = measurement[1]
     Height = measurement[2]
@@ -45,6 +50,7 @@ def RectangularPyramid(measurement):
     return V
 
 def TriangularPrism(measurement):
+    # Author:Jeff
     length = measurement[0]
     height = measurement[1]
     base = measurement[2]
@@ -52,6 +58,7 @@ def TriangularPrism(measurement):
     return V
 
 def TriangularPyramid(measurement):
+    # Author:Jeff
     BaseLength = measurement[0]
     BaseHeight = measurement[1]
     Height = measurement[2]
@@ -59,25 +66,28 @@ def TriangularPyramid(measurement):
     return V
 
 def Cone(measurements):
+    # Author:Simon
     height = measurements[0]
     radius = measurements[1]
     volume = (height/3) * math.pi * math.pow(radius,2)
     return volume
 
 def cylinder(measurement):
+    # Author:Simon
     height = measurement[0]
     radian = measurement[1]
     volume = math.pi* radian * radian * height 
     return volume
 
 def hexagonalprism(measurement):
-    
+    # Author:Simon
     a = measurement[0]
     height = measurement[1]
     volume = 3*math.sqrt(3)*math.pow(a,2)* height/2
     return volume 
 
 def pentagonprism(measurement):
+    # Author:Simon
     BaseEdge = measurement[0]
     height = measurement[1]
     volume = (1/4)*math.sqrt(5*(5+2*math.sqrt(5)))*math.pow(BaseEdge,2)*height
@@ -186,6 +196,7 @@ def getInputs(questions):
     # It will turn all the input data into a list
     # input parameter: list containing the prompts/questions
     # output parameter: return a list containing all the measurements of the shape
+    # Author:Harnoor
     measurements=[]
     
     if questions[-1]==1:
@@ -213,6 +224,7 @@ def main():
     # main block of code that will run your program and control program flow
     # You will need to include a while loop to keep repeating the commands until
     # the user chooses to exit
+    # Author:Harnoor
     title()
     run=(1)
     while run!=2 and run==1:
